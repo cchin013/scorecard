@@ -1,2 +1,4 @@
 # cchin013.github.io
-scorecard for team tryouts
+Scorecard for team tryouts
+
+Made with bootstrap and fontawesome.
