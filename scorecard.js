@@ -1,5 +1,23 @@
 $(document).ready(function () {
+    /**** Run these on load to pre-load all the text fields ****/
+    var names = $(':input[type="text"]');
+    names.each(function () {
+        var val = $(this).text();
+        if (val == "") {
+            $(this).val("PLACEHOLDER_NAME");
+        }
+    });
+    var input = $(':input[type="number"]');
+    input.each(function () {
+        var val = parseInt($(this).val());
+        if (val < 0 || val > 10 || isNaN(val)) {
+            $(this).val(0);
+        }
+    });
+    /*^^^ Run these on load to pre-load all the text fields ^^^*/
+
     //TODO: encapsulate all of the below into one function
+
     $("#calculate").click(function () {
         var top, jg, mid, mark, supp, p1;
         top = "#top";
@@ -50,17 +68,10 @@ function updateBox(role) {
 // if the input is less than 0 or greater than 10, set it to 0 and re-calculate the total
 function inputValidate() {
     var input = $(':input[type="number"]');
-    var names = $(':input[type="text"]');
     input.each(function () {
         var val = parseInt($(this).val());
         if (val < 0 || val > 10 || isNaN(val)) {
             $(this).val(0);
-        }
-    });
-    names.each(function () {
-        var val = $(this).text();
-        if (val == "") {
-            $(this).val("PLACEHOLDER_NAME");
         }
     });
 }
