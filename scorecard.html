@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="scorecard.css">
+    <script src="http://code.jquery.com/jquery-3.2.1.js" integrity="sha256- DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="bootstrap.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script type="text/javascript" src="scorecard.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-hover scorecard" style="">
+                    <tbody>
+                        <tr>
+                            <td>Name <i class="fa fa-users"></i></td>
+                            <td>Role <i class="fa fa-trash"></i></td>
+                            <td>Map Awareness (0-10) <i class="fa fa-sort-numeric-asc"></i></td>
+                            <td>Mechanics (0-10) <i class="fa fa-sort-numeric-asc"></i></td>
+                            <td>Communication (0-10) <i class="fa fa-sort-numeric-asc"></i></td>
+                            <td>Decision Making (0-10) <i class="fa fa-sort-numeric-asc"></i></td>
+                            <td>Rotations (0-10) <i class="fa fa-sort-numeric-asc"></i></td>
+                            <td>Positioning (0-10) <i class="fa fa-sort-numeric-asc"></i></td>
+                            <td>Bonuses <i class="fa fa-star"></i> (MAX. 5)</td>
+                            <td>TOTAL (Min. 0, Max. 65)</td>
+                        </tr>
+                        <tr>
+                            <td><input id="player1" onclick="this.select()" type="text"></td>
+                            <td><span id="top">Top</span> <i class="fa fa-hand-o-up"></i></td>
+                            <td><input id="top1" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="top2" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="top3" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="top4" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="top5" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="top6" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="top7" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="top8" type="number" placeholder="0" disabled="disabled" /></td>
+                        </tr>
+                        <tr>
+                            <td><input id="player2" onclick="this.select()" type="text"></td>
+                            <td><span id="jg">Jungle</span> <i class="fa fa-tree"></i></td>
+                            <td><input id="jg1" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="jg2" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="jg3" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="jg4" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="jg5" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="jg6" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="jg7" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="jg8" type="number" placeholder="0" disabled="disabled" /></td>
+
+                        </tr>
+                        <tr>
+                            <td><input id="player3" onclick="this.select()" type="text"></td>
+                            <td><span id="mid">Middle</span> <i class="fa fa-hand-o-right"></i></td>
+                            <td><input id="mid1" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mid2" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mid3" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mid4" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mid5" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mid6" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mid7" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mid8" type="number" placeholder="0" disabled="disabled" /></td>
+
+                        </tr>
+                        <tr>
+                            <td><input id="player4" onclick="this.select()" type="text"></td>
+                            <td><span id="mark">Marksman</span> <i class="fa fa-hand-o-down"></i></td>
+                            <td><input id="mark1" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mark2" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mark3" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mark4" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mark5" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mark6" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mark7" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="mark8" type="number" placeholder="0" disabled="disabled" /></td>
+
+                        </tr>
+                        <tr>
+                            <td><input id="player5" onclick="this.select()" type="text"></td>
+                            <td><span id="supp">Support</span> <i class="fa fa-twitter"></i></td>
+                            <td><input id="supp1" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="supp2" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="supp3" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="supp4" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="supp5" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="supp6" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="supp7" type="number" placeholder="0" onclick="this.select()" /></td>
+                            <td><input id="supp8" type="number" placeholder="0" disabled="disabled" /></td>
+
+                        </tr>
+                        <tr>
+
+                            <td style="align: center;"><button id="calculate">CALCULATE & GENERATE RESULTS TEXT FILE FOR EVERYONE</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <strong style="font-size: 15px"><i class="fa fa-star"></i>BONUSES</strong>
+                        <br>
+                        <strong>Shotcalling / very  vocal: +3</strong>
+                        <br>
+                        <strong>Good outplay: +1</strong>
+                        <br>
+                        <strong>Warding that wards off a gank(i.e. enemy 'X' tried to gank but failed because of a ward): +1</strong>
+                    </div>
+                    <div class="col-xs-6">
+                        <p>RESULTS TEXT WILL BE GENERATED UNDER HERE <strong>(PLEASE SCREENSHOT THIS AREA AND SEND TO ME)</strong></p>
+                        <p id="results">This will be replaced after clicking the button</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <strong>EXTRA COMMENTS ABOUT 'X' PLAYER</strong><br>
+        <p><textarea id="extraComments" style="width:365px; height: 200px;" rows="5" col="12" placeholder="Please fill out your comments before clicking the button..."></textarea></p>
+    </div>
+
+</body>
+
+</html>

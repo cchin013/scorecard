@@ -1,0 +1,26 @@
+.scorecard {
+    color: black;
+    font-size: 12px;
+}
+
+html,
+body {
+    height: 100%;
+    width: 50%;
+}
+
+body {
+    display: table;
+    margin: 0 auto;
+}
+
+.container {
+    height: 100%;
+    display: table-cell;
+}
+
+@media (max-width: 680px) {
+    .table {
+        max-width: inherit;
+    }
+}
