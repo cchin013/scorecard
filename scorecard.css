@@ -3,10 +3,8 @@
     font-size: 12px;
 }
 
-html,
-body {
-    height: 100%;
-    width: 50%;
+html {
+    height: auto;
 }
 
 body {
@@ -14,9 +12,19 @@ body {
     margin: 0 auto;
 }
 
+.points {
+    color: green;
+}
+
 .container {
     height: 100%;
     display: table-cell;
+}
+
+.table {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: sans-serif;
 }
 
 @media (max-width: 680px) {
