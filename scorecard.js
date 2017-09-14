@@ -1,6 +1,6 @@
 $(document).ready(function () {
     init();
-    $("#calculate").click(boxClickLogic);
+    $(".change").change(mainLogic);
 });
 
 // if the input is less than 0 or greater than 10, set it to 0 and re-calculate the total
@@ -58,7 +58,7 @@ function generateFinalString(playerArray, roleArray) {
 }
 
 //main logic
-function boxClickLogic() {
+function mainLogic() {
     var top, jg, mid, mark, supp, p1, p2, p3, p4, p5, i, PLAYER_NUM;
     // maybe these variables should be global
     PLAYER_NUM = 5; // amount of players on one team

@@ -3,6 +3,14 @@
     font-size: 12px;
 }
 
+.change {
+    /*dummy class so that I can make total update whenever ANY box is changed*/
+}
+
+.container {
+    width: 55% !important;
+}
+
 html {
     height: auto;
 }
@@ -10,6 +18,9 @@ html {
 body {
     display: table;
     margin: 0 auto;
+    background-color: whitesmoke;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .points {
@@ -25,6 +36,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-family: sans-serif;
+    color: blue;
 }
 
 @media (max-width: 680px) {
