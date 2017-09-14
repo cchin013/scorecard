@@ -8,6 +8,7 @@ function inputValidateNum() {
     var input = $(':input[type="number"]');
     input.each(function () {
         var val = parseInt($(this).val());
+        // isNaN is used to initially set all the empty fields to zero
         if (val < 0 || val > 10 || isNaN(val)) {
             $(this).val(0);
         }
@@ -43,37 +44,31 @@ function init() {
     inputValidateNum();
 }
 
+function generateFinalString(playerArray, roleArray) {
+    var finalString = "";
+    var i, j, k;
+    j = 8; // role + j = total points value box, i.e. mid8.val() = total points scored by mid
+    k = 7; // role + k = total bonus points value box, i.e. mid7.val() = total bonus points scored by mid
+    for (i = 0; i < playerArray.length; ++i) {
+        finalString += ("<p>" + $(playerArray[i]).val() + " (" + $(roleArray[i]).text() + ") " +
+            " scored a total of <span class=\"points\">" + $(roleArray[i] + j).val() + "</span> points with a bonus of <span class=\"points\">" + $(roleArray[i] + k).val() + " </span>points." + "</p>")
+    }
+    finalString += ("<p>__________________EXTRA COMMENTS__________________</p>" + $("#extraComments").val());
+    return finalString;
+}
+
 //main logic
 function boxClickLogic() {
-    var top, jg, mid, mark, supp, p1;
-    top = "#top";
-    jg = "#jg";
-    mid = "#mid";
-    mark = "#mark";
-    supp = "#supp";
+    var top, jg, mid, mark, supp, p1, p2, p3, p4, p5, i, PLAYER_NUM;
+    // maybe these variables should be global
+    PLAYER_NUM = 5; // amount of players on one team
+    var playerArr = ["#player1", "#player2", "#player3", "#player4", "#player5"];
+    var roleArr = ["#top", "#jg", "#mid", "#mark", "#supp"];
     inputValidateNum();
-    p1 = $("#player1").val();
-    p2 = $("#player2").val();
-    p3 = $("#player3").val();
-    p4 = $("#player4").val();
-    p5 = $("#player5").val();
-    $("#top8").val(updateBox(top));
-    $("#jg8").val(updateBox(jg));
-    $("#mid8").val(updateBox(mid));
-    $("#mark8").val(updateBox(mark));
-    $("#supp8").val(updateBox(supp));
-    //there is DEFINITELY a more elegant way to do this, but it works for now. will refactor later
-    if ($("#player2").val() != 0 && $("#player3").val() != 0 && $("#player4").val() != 0 && $("#player5").val() != 0) {
-        var finalString = ("<p>" + p1 + " (" + $("#top").text() + ") " +
-                " scored a total of <span class=\"points\">" + $("#top8").val() + "</span> points with a bonus of <span class=\"points\">" + $("#top7").val() + " </span>points." + "</p>") +
-            ("<p>" + p2 + " (" + $("#jg").text() + ") " +
-                " scored a total of <span class=\"points\">" + $("#jg8").val() + "</span> points with a bonus of <span class=\"points\">" + $("#jg7").val() + " </span>points." + "</p>") +
-            ("<p>" + p3 + " (" + $("#mid").text() + ") " +
-                " scored a total of <span class=\"points\">" + $("#mid8").val() + "</span> points with a bonus of <span class=\"points\">" + $("#mid7").val() + " </span>points." + "</p>") +
-            ("<p>" + p4 + " (" + $("#mark").text() + ") " +
-                " scored a total of <span class=\"points\">" + $("#mark8").val() + "</span> points with a bonus of <span class=\"points\">" + $("#mark7").val() + " </span>points." + "</p>") +
-            ("<p>" + p5 + " (" + $("#supp").text() + ") " +
-                " scored a total of <span class=\"points\">" + $("#supp8").val() + "</span> points with a bonus of <span class=\"points\">" + $("#supp7").val() + " </span>points." + "</p>") + ("<p>__________________EXTRA COMMENTS__________________</p>" + $("#extraComments").val());
-        $("#results").html(finalString);
+    // perhaps an object approach would have been more optimized
+    for (i = 0; i < playerArr.length; ++i) {
+        $(roleArr[i] + "8").val(updateBox(roleArr[i]));
     }
+    var finalString = generateFinalString(playerArr, roleArr);
+    $("#results").html(finalString);
 }
